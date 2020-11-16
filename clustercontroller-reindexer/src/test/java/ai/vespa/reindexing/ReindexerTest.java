@@ -108,7 +108,7 @@ class ReindexerTest {
         new Reindexer(cluster, Map.of(music, Instant.ofEpochMilli(10)), database, failIfCalled, clock).reindex();
         assertEquals(reindexing, database.readReindexing());
 
-        // It's time to reindex the "music" documents — let this complete successfully.
+        // It's time to reindex the "music" documents — let this complete successfully.
         clock.advance(Duration.ofMillis(10));
         AtomicBoolean shutDown = new AtomicBoolean();
         Executor executor = Executors.newSingleThreadExecutor();
